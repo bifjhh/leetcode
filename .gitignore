@@ -12,3 +12,6 @@ yarn-error.log*
 *.sln
 *.sw?
 *.code-workspace
+/test
+/demo
+/docs
