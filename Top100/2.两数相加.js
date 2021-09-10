@@ -13,28 +13,14 @@
  * }
  */
 
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
+ const { ListNode, arrToList } = require('../utils/index.js')
 
 /* 生成测试代码 */
 let a1 = [2, 4, 3],
   a2 = [5, 6, 4];
-let l1 = new ListNode(a1[0]),
-  c1 = l1;
-let l2 = new ListNode(a2[0]),
-  c2 = l2;
-for (let i = 1; i < a1.length; i++) {
-  const node = new ListNode(a1[i]);
-  c1.next = node;
-  c1 = node;
-}
-for (let i = 1; i < a2.length; i++) {
-  const node = new ListNode(a2[i]);
-  c2.next = node;
-  c2 = node;
-}
+let l1 = arrToList(a1);
+let l2 = arrToList(a2);
+
 /* 生成测试代码 */
 /**
  * @param {ListNode} l1
