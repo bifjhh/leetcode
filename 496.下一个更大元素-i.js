@@ -27,4 +27,20 @@ var nextGreaterElement = function (nums1, nums2) {
     return -1
   })
 };
+var nextGreaterElement = function (nums1, nums2) {
+  let stack = [],
+    map = {},
+    size = 0,
+    e;
+  for (e of nums2) {
+    map[e] = -1;
+    while (e > stack[size - 1] && size) {
+      map[stack.pop()] = e;
+      size--;
+    }
+    stack.push(e);
+    size++;
+  }
+  return nums1.map(k => map[k]);
+};
 // @lc code=end
